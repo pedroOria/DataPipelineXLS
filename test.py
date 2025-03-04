@@ -1,15 +1,16 @@
 import pandas as pd
 import psycopg2
 import datetime
-
+from dotenv import load_dotenv
+import os
 
 # 🔹 Configuración de PostgreSQL
 DB_CONFIG = {
-    "dbname": "FAST_API",
-    "user": "postgres",
-    "password": "232629oria",
-    "host": "localhost",
-    "port": "5432",
+    "dbname": os.getenv("DB_NAME"),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
+    "host": os.getenv("DB_HOST"),
+    "port": os.getenv("DB_PORT"),
 }
 
 QUERY = "SELECT * FROM alert_levels;"
